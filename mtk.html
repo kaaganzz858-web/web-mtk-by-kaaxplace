@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Matematika Profesional By KAAXPLACE</title>
+    
+    <!-- Include libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #87CEEB 0%, #B0E2FF 50%, #E6F3FF 100%);
+            color: #2c3e50;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Cloud background elements */
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.7;
+            z-index: -1;
+        }
+
+        .cloud-1 {
+            width: 120px;
+            height: 40px;
+            top: 10%;
+            left: 5%;
+            box-shadow: 
+                20px 0 0 0 white,
+                40px 0 0 0 white,
+                60px 0 0 0 white;
+        }
+
+        .cloud-2 {
+            width: 150px;
+            height: 50px;
+            top: 25%;
+            right: 8%;
+            box-shadow: 
+                25px 0 0 0 white,
+                50px 0 0 0 white,
+                75px 0 0 0 white;
+        }
+
+        .cloud-3 {
+            width: 100px;
+            height: 35px;
+            bottom: 15%;
+            left: 15%;
+            box-shadow: 
+                15px 0 0 0 white,
+                30px 0 0 0 white,
+                45px 0 0 0 white;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a5276;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(45deg, #2980b9, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+            padding: 30px;
+            margin: 20px 0;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(52, 152, 219, 0.3);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #2c3e50;
+            margin: 15px 0 10px;
+        }
+
+        input[type="text"], select, textarea, input[type="file"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            border: 2px solid #d6eaf8;
+            font-size: 16px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.8);
+            color: #2c3e50;
+            transition: 0.3s;
+        }
+
+        input[type="text"]:focus, textarea:focus, select:focus, input[type="file"]:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+            background: white;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            font-size: 16px;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(45deg, #3498db, #5dade2);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(45deg, #5dade2, #85c1e9);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .button-secondary {
+            background: linear-gradient(45deg, #e74c3c, #ec7063);
+        }
+
+        .button-secondary:hover {
+            background: linear-gradient(45deg, #ec7063, #f1948a);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+
+        .button-success {
+            background: linear-gradient(45deg, #2ecc71, #58d68d);
+        }
+
+        .button-success:hover {
+            background: linear-gradient(45deg, #58d68d, #82e5aa);
+            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.4);
+        }
+
+        .output {
+            font-size: 16px;
+            padding: 15px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.8);
+            word-break: break-word;
+            margin-bottom: 15px;
+            min-height: 50px;
+            border: 1px solid #d6eaf8;
+        }
+
+        .correct {
+            color: #27ae60;
+            font-weight: 600;
+            background: rgba(39, 174, 96, 0.1);
+            border: 1px solid rgba(39, 174, 96, 0.3);
+        }
+
+        .error {
+            color: #e74c3c;
+            font-weight: 600;
+            background: rgba(231, 76, 60, 0.1);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+        }
+
+        .warning {
+            color: #f39c12;
+            font-weight: 600;
+            background: rgba(243, 156, 18, 0.1);
+            border: 1px solid rgba(243, 156, 18, 0.3);
+        }
+
+        .score {
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 10px;
+            text-align: center;
+            padding: 10px;
+            background: rgba(52, 152, 219, 0.2);
+            border-radius: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        img.previewImg {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .calculator-grid button {
+            padding: 18px;
+            font-size: 18px;
+            margin: 0;
+            min-height: 60px;
+        }
+
+        .calculator-grid .operator {
+            background: linear-gradient(45deg, #e74c3c, #ec7063);
+        }
+
+        .calculator-grid .function {
+            background: linear-gradient(45deg, #2ecc71, #58d68d);
+        }
+
+        .calculator-grid .equals {
+            background: linear-gradient(45deg, #3498db, #5dade2);
+            grid-column: span 2;
+        }
+
+        .calculator-grid .clear {
+            background: linear-gradient(45deg, #f39c12, #f7dc6f);
+        }
+
+        .examples {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 15px;
+            line-height: 1.6;
+            padding: 15px;
+            background: rgba(214, 234, 248, 0.5);
+            border-radius: 10px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 15px;
+            font-style: italic;
+            color: #3498db;
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .tab-buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 10px;
+            color: #2c3e50;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .tab-button.active {
+            background: linear-gradient(45deg, #3498db, #5dade2);
+            color: white;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .tab-button:hover {
+            background: rgba(52, 152, 219, 0.6);
+            color: white;
+        }
+
+        .feature-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #2ecc71, #58d68d);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .history-item {
+            padding: 10px;
+            margin: 5px 0;
+            background: rgba(214, 234, 248, 0.5);
+            border-radius: 8px;
+            border-left: 3px solid #3498db;
+        }
+
+        .quiz-stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.8rem;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+            .card {
+                padding: 20px;
+                margin: 15px 0;
+            }
+            .calculator-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+            }
+            .calculator-grid button {
+                padding: 15px;
+                font-size: 16px;
+                min-height: 50px;
+            }
+            .tab-buttons {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            input[type="text"], select, textarea, input[type="file"] {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .calculator-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 5px;
+            }
+            .calculator-grid button {
+                padding: 12px;
+                font-size: 14px;
+                min-height: 45px;
+            }
+            .tab-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cloud background elements -->
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    
+    <div class="container">
+        <h1>🧮 Website Matematika Profesional By KAAXPLACE</h1>
+        
+        <div class="tab-buttons">
+            <button class="tab-button active" data-tab="mainMenu">🏠 Menu Utama</button>
+            <button class="tab-button" data-tab="calculator">🧮 Kalkulator</button>
+            <button class="tab-button" data-tab="quiz">📚 Quiz</button>
+            <button class="tab-button" data-tab="customSoal">📝 Custom Soal</button>
+            <button class="tab-button" data-tab="history">📊 Riwayat</button>
+        </div>
+
+        <!-- MAIN MENU -->
+        <div id="mainMenu" class="card">
+            <h2>Selamat Datang! <span class="feature-badge">ONLINE</span></h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #7f8c8d;">
+                Website matematika lengkap dengan kalkulator advanced, quiz interaktif, dan OCR
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                <button class="menu-btn" data-tab="calculator">
+                    <div style="font-size: 24px;">🧮</div>
+                    <div><strong>Kalkulator</strong></div>
+                    <div style="font-size: 12px; opacity: 0.8;">Advanced + Big Number</div>
+                </button>
+                
+                <button class="menu-btn" data-tab="quiz">
+                    <div style="font-size: 24px;">📚</div>
+                    <div><strong>Quiz Matematika</strong></div>
+                    <div style="font-size: 12px; opacity: 0.8;">5 Level Kesulitan</div>
+                </button>
+                
+                <button class="menu-btn" data-tab="customSoal">
+                    <div style="font-size: 24px;">📝</div>
+                    <div><strong>Custom Soal</strong></div>
+                    <div style="font-size: 12px; opacity: 0.8;">+ OCR Scanner</div>
+                </button>
+                
+                <button class="menu-btn" data-tab="history">
+                    <div style="font-size: 24px;">📊</div>
+                    <div><strong>Riwayat</strong></div>
+                    <div style="font-size: 12px; opacity: 0.8;">History Perhitungan</div>
+                </button>
+            </div>
+            
+            <div class="examples" style="margin-top: 20px;">
+                <strong>✨ Fitur Unggulan:</strong><br>
+                • ✅ Kalkulator dengan angka tak terbatas<br>
+                • ✅ Support persamaan dan matriks<br>
+                • ✅ Quiz dengan 5 level kesulitan<br>
+                • ✅ Scan soal dari gambar (OCR)<br>
+                • ✅ Riwayat perhitungan<br>
+                • ✅ Responsive design
+            </div>
+        </div>
+
+        <!-- KALKULATOR -->
+        <div id="calculator" class="card hidden">
+            <h2>Kalkulator Advanced <span class="feature-badge">BIG NUMBER</span></h2>
+            <input type="text" id="inputSoal" placeholder="Contoh: 2+3*4, √(144), 50% dari 200, sin(30)">
+            
+            <div class="calculator-grid">
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button class="operator">+</button>
+                
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button class="operator">-</button>
+                
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="operator">×</button>
+                
+                <button>0</button>
+                <button>.</button>
+                <button class="operator">÷</button>
+                <button class="operator">^</button>
+                
+                <button class="function">√</button>
+                <button class="function">%</button>
+                <button class="function">(</button>
+                <button class="function">)</button>
+                
+                <button class="function">sin</button>
+                <button class="function">cos</button>
+                <button class="function">tan</button>
+                <button class="function">π</button>
+                
+                <button class="clear">C</button>
+                <button class="clear">⌫</button>
+                <button class="equals">=</button>
+            </div>
+            
+            <div class="examples">
+                <strong>Contoh ekspresi yang didukung:</strong><br>
+                • Operasi dasar: 2+3*4, (5+3)*2<br>
+                • Persen: 50% dari 200, 25% + 15%<br>
+                • Akar &amp; Pangkat: √144, 2^10, 5³<br>
+                • Trigonometri: sin(30), cos(45), tan(60)<br>
+                • Konstanta: π (3.14159)
+            </div>
+            
+            <div id="loadingCalculator" class="loading hidden">🔄 Menghitung...</div>
+            <div class="output" id="outputHasil"></div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <button class="button-secondary" id="clearCalculator">Hapus Input</button>
+                <button class="back-to-menu">Kembali ke Menu</button>
+            </div>
+        </div>
+
+        <!-- QUIZ -->
+        <div id="quiz" class="card hidden">
+            <h2>Quiz Matematika Interaktif <span class="feature-badge">5 LEVEL</span></h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 20px;">
+                <div>
+                    <label>Pilih Jenjang:</label>
+                    <select id="tingkatPendidikan">
+                        <option value="tk">🎨 TK</option>
+                        <option value="sd">👦 SD</option>
+                        <option value="smp">👨‍🎓 SMP</option>
+                        <option value="sma">👩‍🎓 SMA</option>
+                        <option value="mahasiswa">🎓 Mahasiswa</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label>Jenis Soal:</label>
+                    <select id="jenisSoal">
+                        <option value="acak">🎲 Acak Semua</option>
+                        <option value="+">➕ Penjumlahan</option>
+                        <option value="-">➖ Pengurangan</option>
+                        <option value="*">✖️ Perkalian</option>
+                        <option value="/">➗ Pembagian</option>
+                        <option value="^">🔢 Pangkat</option>
+                        <option value="√">√ Akar</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="quiz-stats">
+                <div id="quizProgress">Soal: 0/10</div>
+                <div id="quizTimer">Waktu: 00:00</div>
+            </div>
+            
+            <div class="output" id="quizSoal" style="text-align: center; font-size: 18px; min-height: 80px; display: flex; align-items: center; justify-content: center;">
+                Klik "Mulai Quiz" untuk memulai
+            </div>
+            
+            <input type="text" id="jawabanQuiz" placeholder="Masukkan jawaban Anda...">
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <button id="submitQuiz">Submit Jawaban</button>
+                <button id="btnNextSoal" style="display:none;">Soal Selanjutnya ➡️</button>
+            </div>
+            
+            <div class="output" id="quizFeedback"></div>
+            <div class="score" id="quizScore">Skor: 0</div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <button class="button-success" id="startQuiz">🎮 Mulai Quiz</button>
+                <button class="back-to-menu">🏠 Kembali ke Menu</button>
+            </div>
+        </div>
+
+        <!-- CUSTOM SOAL & OCR -->
+        <div id="customSoal" class="card hidden">
+            <h2>Custom Soal &amp; OCR Scanner <span class="feature-badge">AI POWERED</span></h2>
+            
+            <h3>📝 Input Manual</h3>
+            <textarea id="soalUser" rows="3" placeholder="Masukkan soal matematika Anda...
+Contoh: 123 + 456, √144, 50% dari 200"></textarea>
+            <button id="calculateCustom">Hitung &amp; Simpan</button>
+            <div class="output" id="outputCustomSoal"></div>
+
+            <h3>📷 Scan dari Gambar (OCR)</h3>
+            <input type="file" id="fotoSoal" accept="image/*">
+            <div class="output" id="previewFoto"></div>
+            <button id="scanImage">🔍 Scan &amp; Hitung</button>
+
+            <div style="margin-top: 20px;">
+                <button class="back-to-menu">🏠 Kembali ke Menu</button>
+            </div>
+        </div>
+
+        <!-- HISTORY -->
+        <div id="history" class="card hidden">
+            <h2>📊 Riwayat Perhitungan</h2>
+            <div id="historyList" class="output">
+                <!-- History items will be populated here -->
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <button class="button-secondary" id="clearHistory">🗑️ Hapus Riwayat</button>
+                <button class="back-to-menu">🏠 Kembali ke Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data storage
+        let calculationHistory = JSON.parse(localStorage.getItem('calculationHistory')) || [];
+        let quizScore = 0;
+        let currentQuestion = 0;
+        let totalQuestions = 10;
+        let quizTimer = null;
+        let timeElapsed = 0;
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load history
+            updateHistoryDisplay();
+            
+            // Tab navigation
+            document.querySelectorAll('.tab-button, .menu-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+                    switchTab(targetTab);
+                });
+            });
+
+            // Back to menu buttons
+            document.querySelectorAll('.back-to-menu').forEach(button => {
+                button.addEventListener('click', function() {
+                    switchTab('mainMenu');
+                });
+            });
+
+            // Calculator functionality
+            setupCalculator();
+            
+            // Quiz functionality
+            setupQuiz();
+            
+            // Custom soal functionality
+            setupCustomSoal();
+            
+            // History functionality
+            setupHistory();
+        });
+
+        // Tab switching
+        function switchTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-tab') === tabName) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Show/hide cards
+            document.querySelectorAll('.card').forEach(card => {
+                card.classList.add('hidden');
+            });
+            document.getElementById(tabName).classList.remove('hidden');
+        }
+
+        // Calculator functions
+        function setupCalculator() {
+            const input = document.getElementById('inputSoal');
+            const output = document.getElementById('outputHasil');
+            const loading = document.getElementById('loadingCalculator');
+            
+            // Calculator buttons
+            document.querySelectorAll('.calculator-grid button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const buttonText = this.textContent;
+                    
+                    if (this.classList.contains('equals')) {
+                        calculateResult();
+                    } else if (this.classList.contains('clear')) {
+                        if (buttonText === 'C') {
+                            input.value = '';
+                            output.innerHTML = '';
+                        } else if (buttonText === '⌫') {
+                            input.value = input.value.slice(0, -1);
+                        }
+                    } else {
+                        // Handle special functions
+                        if (buttonText === '√') input.value += '√(';
+                        else if (buttonText === 'π') input.value += '3.14159';
+                        else if (buttonText === 'sin') input.value += 'sin(';
+                        else if (buttonText === 'cos') input.value += 'cos(';
+                        else if (buttonText === 'tan') input.value += 'tan(';
+                        else input.value += buttonText;
+                    }
+                });
+            });
+            
+            // Clear calculator button
+            document.getElementById('clearCalculator').addEventListener('click', function() {
+                input.value = '';
+                output.innerHTML = '';
+            });
+            
+            // Enter key support
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    calculateResult();
+                }
+            });
+        }
+
+        function calculateResult() {
+            const input = document.getElementById('inputSoal');
+            const output = document.getElementById('outputHasil');
+            const loading = document.getElementById('loadingCalculator');
+            const expression = input.value.trim();
+            
+            if (!expression) {
+                output.innerHTML = '<span class="error">Masukkan ekspresi matematika terlebih dahulu!</span>';
+                return;
+            }
+            
+            loading.classList.remove('hidden');
+            output.innerHTML = '';
+            
+            // Simulate calculation delay
+            setTimeout(() => {
+                try {
+                    let result;
+                    let processedExpression = expression;
+                    
+                    // Handle special functions
+                    processedExpression = processedExpression.replace(/√/g, 'Math.sqrt');
+                    processedExpression = processedExpression.replace(/π/g, 'Math.PI');
+                    processedExpression = processedExpression.replace(/sin/g, 'Math.sin');
+                    processedExpression = processedExpression.replace(/cos/g, 'Math.cos');
+                    processedExpression = processedExpression.replace(/tan/g, 'Math.tan');
+                    processedExpression = processedExpression.replace(/×/g, '*');
+                    processedExpression = processedExpression.replace(/÷/g, '/');
+                    
+                    // Convert degrees to radians for trig functions
+                    processedExpression = processedExpression.replace(/(sin|cos|tan)\(([^)]+)\)/g, function(match, func, angle) {
+                        // If no degree symbol, assume radians
+                        if (!angle.includes('°')) return match;
+                        
+                        // Convert degrees to radians
+                        const degrees = parseFloat(angle);
+                        const radians = degrees * (Math.PI / 180);
+                        return func + '(' + radians + ')';
+                    });
+                    
+                    // Handle percentage
+                    if (processedExpression.includes('%')) {
+                        const parts = processedExpression.split('%');
+                        if (parts.length === 2 && parts[1].includes('dari')) {
+                            const percent = parseFloat(parts[0]);
+                            const ofParts = parts[1].split('dari');
+                            const number = parseFloat(ofParts[1]);
+                            result = (percent / 100) * number;
+                        } else {
+                            const percent = parseFloat(parts[0]);
+                            result = percent / 100;
+                        }
+                    } else {
+                        // Use Function constructor for safer evaluation
+                        result = Function('"use strict"; return (' + processedExpression + ')')();
+                    }
+                    
+                    // Format result
+                    let formattedResult;
+                    if (Number.isInteger(result)) {
+                        formattedResult = result.toString();
+                    } else {
+                        formattedResult = parseFloat(result.toFixed(10)).toString();
+                    }
+                    
+                    output.innerHTML = `<span class="correct">${expression} = ${formattedResult}</span>`;
+                    
+                    // Save to history
+                    addToHistory(expression, formattedResult);
+                    
+                } catch (error) {
+                    output.innerHTML = `<span class="error">Error: Ekspresi tidak valid - ${error.message}</span>`;
+                }
+                
+                loading.classList.add('hidden');
+            }, 800);
+        }
+
+        // Quiz functions
+        function setupQuiz() {
+            document.getElementById('startQuiz').addEventListener('click', startQuiz);
+            document.getElementById('submitQuiz').addEventListener('click', submitQuiz);
+            document.getElementById('btnNextSoal').addEventListener('click', nextQuestion);
+            
+            // Enter key support for quiz
+            document.getElementById('jawabanQuiz').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    submitQuiz();
+                }
+            });
+        }
+
+        function startQuiz() {
+            quizScore = 0;
+            currentQuestion = 0;
+            timeElapsed = 0;
+            
+            document.getElementById('quizScore').textContent = 'Skor: 0';
+            document.getElementById('quizProgress').textContent = 'Soal: 0/' + totalQuestions;
+            document.getElementById('quizFeedback').innerHTML = '';
+            document.getElementById('btnNextSoal').style.display = 'none';
+            document.getElementById('startQuiz').textContent = 'Mulai Ulang Quiz';
+            document.getElementById('jawabanQuiz').style.display = 'block';
+            document.getElementById('submitQuiz').style.display = 'block';
+            
+            // Start timer
+            if (quizTimer) clearInterval(quizTimer);
+            quizTimer = setInterval(function() {
+                timeElapsed++;
+                const minutes = Math.floor(timeElapsed / 60);
+                const seconds = timeElapsed % 60;
+                document.getElementById('quizTimer').textContent = `Waktu: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+            
+            generateQuestion();
+        }
+
+        function generateQuestion() {
+            const tingkat = document.getElementById('tingkatPendidikan').value;
+            const jenis = document.getElementById('jenisSoal').value;
+            
+            let num1, num2, operator, question, answer;
+            
+            // Determine difficulty based on tingkat
+            let maxNum = 10;
+            if (tingkat === 'smp') maxNum = 50;
+            else if (tingkat === 'sma') maxNum = 100;
+            else if (tingkat === 'mahasiswa') maxNum = 1000;
+            
+            // Generate numbers
+            num1 = Math.floor(Math.random() * maxNum) + 1;
+            num2 = Math.floor(Math.random() * maxNum) + 1;
+            
+            // Determine operator
+            if (jenis === 'acak') {
+                const operators = ['+', '-', '*', '/', '^', '√'];
+                operator = operators[Math.floor(Math.random() * operators.length)];
+            } else {
+                operator = jenis;
+            }
+            
+            // Generate question and answer
+            switch(operator) {
+                case '+':
+                    question = `${num1} + ${num2}`;
+                    answer = num1 + num2;
+                    break;
+                case '-':
+                    // Ensure positive result for easier calculation
+                    if (num1 < num2) [num1, num2] = [num2, num1];
+                    question = `${num1} - ${num2}`;
+                    answer = num1 - num2;
+                    break;
+                case '*':
+                    question = `${num1} × ${num2}`;
+                    answer = num1 * num2;
+                    break;
+                case '/':
+                    // Ensure integer result
+                    answer = Math.floor(Math.random() * 10) + 1;
+                    num1 = num2 * answer;
+                    question = `${num1} ÷ ${num2}`;
+                    break;
+                case '^':
+                    num2 = Math.floor(Math.random() * 3) + 2; // Power between 2 and 4
+                    question = `${num1}^${num2}`;
+                    answer = Math.pow(num1, num2);
+                    break;
+                case '√':
+                    num1 = Math.floor(Math.random() * 10) + 1;
+                    question = `√${num1 * num1}`;
+                    answer = num1;
+                    break;
+            }
+            
+            document.getElementById('quizSoal').textContent = question;
+            document.getElementById('quizSoal').dataset.correctAnswer = answer;
+            document.getElementById('jawabanQuiz').value = '';
+            document.getElementById('quizFeedback').innerHTML = '';
+            
+            currentQuestion++;
+            document.getElementById('quizProgress').textContent = `Soal: ${currentQuestion}/${totalQuestions}`;
+        }
+
+        function submitQuiz() {
+            const userAnswer = document.getElementById('jawabanQuiz').value;
+            const correctAnswer = document.getElementById('quizSoal').dataset.correctAnswer;
+            const feedback = document.getElementById('quizFeedback');
+            
+            if (!userAnswer) {
+                feedback.innerHTML = '<span class="error">Masukkan jawaban terlebih dahulu!</span>';
+                return;
+            }
+            
+            if (parseFloat(userAnswer) === parseFloat(correctAnswer)) {
+                feedback.innerHTML = '<span class="correct">Jawaban benar! 🎉</span>';
+                quizScore += 10;
+                document.getElementById('quizScore').textContent = `Skor: ${quizScore}`;
+            } else {
+                feedback.innerHTML = `<span class="error">Jawaban salah. Jawaban yang benar adalah ${correctAnswer}</span>`;
+            }
+            
+            document.getElementById('btnNextSoal').style.display = 'block';
+            
+            // Check if quiz is complete
+            if (currentQuestion >= totalQuestions) {
+                finishQuiz();
+            }
+        }
+
+        function nextQuestion() {
+            document.getElementById('btnNextSoal').style.display = 'none';
+            
+            if (currentQuestion < totalQuestions) {
+                generateQuestion();
+            } else {
+                finishQuiz();
+            }
+        }
+
+        function finishQuiz() {
+            clearInterval(quizTimer);
+            document.getElementById('quizSoal').innerHTML = `
+                <div style="text-align: center;">
+                    <h3>Quiz Selesai! 🎉</h3>
+                    <p>Skor Akhir: ${quizScore}/${totalQuestions * 10}</p>
+                    <p>Waktu: ${Math.floor(timeElapsed / 60)}:${(timeElapsed % 60).toString().padStart(2, '0')}</p>
+                </div>
+            `;
+            document.getElementById('jawabanQuiz').style.display = 'none';
+            document.getElementById('submitQuiz').style.display = 'none';
+            document.getElementById('btnNextSoal').style.display = 'none';
+        }
+
+        // Custom soal functions
+        function setupCustomSoal() {
+            document.getElementById('calculateCustom').addEventListener('click', calculateCustom);
+            document.getElementById('scanImage').addEventListener('click', simulateOCR);
+            
+            // Image preview for OCR
+            document.getElementById('fotoSoal').addEventListener('change', function(e) {
+                const preview = document.getElementById('previewFoto');
+                preview.innerHTML = '';
+                
+                if (this.files && this.files[0]) {
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.className = 'previewImg';
+                        preview.appendChild(img);
+                    }
+                    
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+        }
+
+        function calculateCustom() {
+            const soal = document.getElementById('soalUser').value;
+            const output = document.getElementById('outputCustomSoal');
+            
+            if (!soal.trim()) {
+                output.innerHTML = '<span class="error">Masukkan soal terlebih dahulu!</span>';
+                return;
+            }
+            
+            try {
+                // Use the same calculation logic as the calculator
+                let result;
+                let processedExpression = soal;
+                
+                // Handle special functions
+                processedExpression = processedExpression.replace(/√/g, 'Math.sqrt');
+                processedExpression = processedExpression.replace(/π/g, 'Math.PI');
+                processedExpression = processedExpression.replace(/sin/g, 'Math.sin');
+                processedExpression = processedExpression.replace(/cos/g, 'Math.cos');
+                processedExpression = processedExpression.replace(/tan/g, 'Math.tan');
+                processedExpression = processedExpression.replace(/×/g, '*');
+                processedExpression = processedExpression.replace(/÷/g, '/');
+                
+                // Convert degrees to radians for trig functions
+                processedExpression = processedExpression.replace(/(sin|cos|tan)\(([^)]+)\)/g, function(match, func, angle) {
+                    // If no degree symbol, assume radians
+                    if (!angle.includes('°')) return match;
+                    
+                    // Convert degrees to radians
+                    const degrees = parseFloat(angle);
+                    const radians = degrees * (Math.PI / 180);
+                    return func + '(' + radians + ')';
+                });
+                
+                // Handle percentage
+                if (processedExpression.includes('%')) {
+                    const parts = processedExpression.split('%');
+                    if (parts.length === 2 && parts[1].includes('dari')) {
+                        const percent = parseFloat(parts[0]);
+                        const ofParts = parts[1].split('dari');
+                        const number = parseFloat(ofParts[1]);
+                        result = (percent / 100) * number;
+                    } else {
+                        const percent = parseFloat(parts[0]);
+                        result = percent / 100;
+                    }
+                } else {
+                    // Use Function constructor for safer evaluation
+                    result = Function('"use strict"; return (' + processedExpression + ')')();
+                }
+                
+                // Format result
+                let formattedResult;
+                if (Number.isInteger(result)) {
+                    formattedResult = result.toString();
+                } else {
+                    formattedResult = parseFloat(result.toFixed(10)).toString();
+                }
+                
+                output.innerHTML = `<span class="correct">${soal} = ${formattedResult}</span>`;
+                
+                // Save to history
+                addToHistory(soal, formattedResult);
+                
+            } catch (error) {
+                output.innerHTML = `<span class="error">Error: Ekspresi tidak valid - ${error.message}</span>`;
+            }
+        }
+
+        function simulateOCR() {
+            const output = document.getElementById('outputCustomSoal');
+            output.innerHTML = '<span class="warning">Fitur OCR sedang dalam pengembangan. Untuk saat ini, gunakan input manual.</span>';
+        }
+
+        // History functions
+        function setupHistory() {
+            document.getElementById('clearHistory').addEventListener('click', clearHistory);
+        }
+
+        function addToHistory(expression, result) {
+            const timestamp = new Date().toLocaleString('id-ID');
+            calculationHistory.unshift({
+                expression,
+                result,
+                timestamp
+            });
+            
+            // Keep only last 50 items
+            if (calculationHistory.length > 50) {
+                calculationHistory = calculationHistory.slice(0, 50);
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('calculationHistory', JSON.stringify(calculationHistory));
+            
+            // Update display
+            updateHistoryDisplay();
+        }
+
+        function updateHistoryDisplay() {
+            const historyList = document.getElementById('historyList');
+            
+            if (calculationHistory.length === 0) {
+                historyList.innerHTML = '<p style="text-align: center; color: #7f8c8d;">Belum ada riwayat perhitungan</p>';
+                return;
+            }
+            
+            historyList.innerHTML = calculationHistory.map(item => `
+                <div class="history-item">
+                    <strong>${item.expression}</strong><br>
+                    <span style="color: #27ae60;">= ${item.result}</span><br>
+                    <small style="color: #7f8c8d;">${item.timestamp}</small>
+                </div>
+            `).join('');
+        }
+
+        function clearHistory() {
+            calculationHistory = [];
+            localStorage.setItem('calculationHistory', JSON.stringify(calculationHistory));
+            updateHistoryDisplay();
+        }
+    </script>
+</body>
+</html>
